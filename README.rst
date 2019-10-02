@@ -9,6 +9,7 @@ You cannot use ``htmlgen`` (stdlib in nim) macros with
 more than two string clauses as following.
 
 .. code-block:: nim
+
   import htmlgen
 
   ## IT CANNOT BE COMPILED.
@@ -25,6 +26,7 @@ more than two string clauses as following.
 But now, you can write two clauses in one tag macro with ``htmlcc`` macro!
 
 .. code-block:: nim
+
   import htmlcc
 
   echo:
@@ -36,6 +38,7 @@ But now, you can write two clauses in one tag macro with ``htmlcc`` macro!
       htmlcc body:
         h1:
           "TITLE FOO"
+        br()
         "body bar, hogefugapiyo......"
 
-It echos ``"<html><head><title>TITLE FOO</title><meta charset="utf-8" /></head><body><h1>TITLE FOO</h1>body bar, hogefugapiyo......</body></html>"``
+It echos ``"<html><head><title>TITLE FOO</title><meta charset="utf-8" /></head><body><h1>TITLE FOO</h1><br />body bar, hogefugapiyo......</body></html>"``
